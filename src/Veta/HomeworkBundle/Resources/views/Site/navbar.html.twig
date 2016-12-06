@@ -1,0 +1,24 @@
+<nav class="navbar navbar-inverse navbar-static" id="navbar-example">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="collapsed navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> <a class="navbar-brand">Homework_8</a> </div>
+        <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown {% if active == 'post' %} active {% endif %}"> <a href="{{ path('veta_homework_post_index') }}" class="dropdown-toggle" id="drop1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Post <span class="caret"></span> </a>
+                    <ul class="dropdown-menu" aria-labelledby="drop1">
+                        <li><a href="{{ path('veta_homework_post_index') }}">All Posts</a></li>
+                        <li><a><form action="{{ path('veta_homework_post_create') }}" method="post"><span onclick="$(this).closest('form').submit()">Create new Post</span></form></a></li>
+                        {#<li><a href="#">Something else here</a></li>#}
+                        {#<li role="separator" class="divider"></li>#}
+                        {#<li><a href="#">Separated link</a></li>#}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

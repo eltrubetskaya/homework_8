@@ -1,0 +1,6 @@
+services:
+    veta_homework.twig_extension:
+        class: Veta\HomeworkBundle\Twig\VetaHomeworkExtension
+        arguments: []
+        tags:
+            - { name: twig.extension }

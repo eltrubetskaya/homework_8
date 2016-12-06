@@ -1,0 +1,11 @@
+{% macro input(name, id, value, type) %}
+    <div class="form-group">
+        <input class="form-control" type="{{ type|default('text') }}" name="{{ name }}" id = {{ id }} value="{{ value|e }}" />
+    </div>
+{% endmacro %}
+
+{% macro textarea(name, id, value, rows, cols) %}
+    <div class="form-group">
+        <textarea class="form-control" name="{{ name }}" id = {{ id }} rows="{{ rows|default(10) }}" cols="{{ cols|default(40) }}">{{ value|e }}</textarea>
+    </div>
+{% endmacro %}

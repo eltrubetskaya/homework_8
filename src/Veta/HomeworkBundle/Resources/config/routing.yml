@@ -1,0 +1,34 @@
+veta_homework_site:
+    path:     /
+    defaults: { _controller: VetaHomeworkBundle:Site:index }
+
+veta_homework_post_index:
+    path:     /post
+    defaults: { _controller: VetaHomeworkBundle:Post:index }
+    methods: [GET]
+
+veta_homework_post_view:
+    path:     /post/{slug}
+    defaults: { _controller: VetaHomeworkBundle:Post:view }
+    methods: [GET]
+    requirements:
+        slug: '\d+'
+
+veta_homework_post_edit:
+    path:     /post/{slug}
+    defaults: { _controller: VetaHomeworkBundle:Post:edit }
+    requirements:
+        slug: '\d+'
+    methods: [PUT]
+
+veta_homework_post_delete:
+    path:     /post/{slug}
+    defaults: { _controller: VetaHomeworkBundle:Post:delete }
+    methods: [DELETE]
+    requirements:
+        slug: '\d+'
+
+veta_homework_post_create:
+    path:     /post
+    defaults: { _controller: VetaHomeworkBundle:Post:create }
+    methods: [POST]

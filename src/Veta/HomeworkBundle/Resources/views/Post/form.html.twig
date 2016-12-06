@@ -1,0 +1,34 @@
+{% extends "VetaHomeworkBundle::layout.html.twig" %}
+
+{% block title %}VetaHomeworkBundle:Post:create{% endblock %}
+
+{% block header %}
+    <div class="row">
+        <div class="col-lg-12">
+            {% include 'VetaHomeworkBundle:Site:navbar.html.twig' with {'active': 'post'} %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-info" role="alert">
+
+                {% from '@VetaHomework/Site/forms.html.twig' import input as input_field, textarea %}
+
+                <form action="{{ path('veta_homework_post_create') }}" method="post">
+                    {{  input_field('id', 'id', random(100), 'hidden') }}
+                    <div class="form-group">
+                        <strong>Create new Post</strong>
+                        <span class="glyphicon glyphicon-check pull-right" aria-hidden="true"></span>
+                    </div>
+                    {{  input_field('post_date', 'post_date', totime('now')|date('Y-m-d H:m')) }}
+                    {{  textarea('text', 'text', '') }}
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
